@@ -15,7 +15,7 @@ int randomizing();
 std::seed_seq seq{ randomizing() };
 std::ranlux48 engine(seq);
 
-//////////////////////////////rng-stuff
+////////////////////////////// die folgenden fuctoins sind nicht von mir, sind da zum hinreichend zuverlässigen Genaerieren von Zufallszahlen und Testen ob eine Eingabe eine Ziffer ist
 int how_often() {
 	std::seed_seq seed2{ time(NULL) };
 	std::default_random_engine stuff(seed2);
@@ -63,15 +63,13 @@ int randomizing() {
 	R = distr(rando);
 	return R;
 }
-///////////////////////////////
-
-bool isNumber(const string& str) //die einzige function welche ich nicht selber kreiert habe... der ohne sünde werfe den ersten Stein
+bool isNumber(const string& str
 {
 	return !str.empty() &&
 	std::find_if(str.begin(), str.end(),
 	[](unsigned char c) { return !std::isdigit(c); }) == str.end();
 }
-
+/////////////////////////////// ab hier von mir
 
 struct node
 {
@@ -114,7 +112,7 @@ void refreshnum() //zum neu-Nummerierung der Liste vom Kopf ausgehend
 	return;
 }
 
-char randomLetter() //das geht sicher deutlich eleganter...
+char randomLetter() //das geht sicher DEUTLICH eleganter...
 {
 	char B;
 	int N = rl(engine);
